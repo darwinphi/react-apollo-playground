@@ -1,7 +1,9 @@
 import { useCharacter } from "../hooks/useCharacter";
+import { useParams } from "react-router-dom";
 
 export function Character() {
-  const { data, loading, error } = useCharacter(1);
+  const { id } = useParams();
+  const { data, loading, error } = useCharacter(id);
   const character = data?.character;
 
   if (loading) return <p>⌛ Loading...</p>;
