@@ -1,12 +1,14 @@
-import { useState } from "react";
 import { Characters } from "./pages/Characters";
+import { Character } from "./pages/Character";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <main>
-      <Characters />
+      <Routes>
+        <Route path="/" element={<Characters />} />
+        <Route path="/:id" element={<Character />} />
+      </Routes>
     </main>
   );
 }
